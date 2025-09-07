@@ -1,0 +1,17 @@
+.buttons{
+    width: 30px;
+    height: 25px;
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+#left{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#mid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
