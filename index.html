@@ -11,50 +11,50 @@
 
 <body>
     <div class="container">
-        <div class="display-box">
+        <div id="display-box">
             <input type="text" id="display" placeholder="Input expression here">
         </div>
         <div class="buttons">
             <div id="left">
-                <button onclick="isRadian()">RAD</button>
-                <button onclick="isDegree()">DEG</button>
-                <button onclick="appendExpression()">π</button>
-                <button onclick="appendExpression()">Abs</button>
-                <button onclick="appendExpression()">sin</button>
-                <button onclick="appendExpression()">x!</button>
-                <button onclick="appendExpression()">e</button>
-                <button onclick="appendExpression()">cos</button>
-                <button onclick="appendExpression()">ln</button>
-                <button onclick="appendExpression()">EXP</button>
-                <button onclick="appendExpression()">tan</button>
-                <button onclick="appendExpression()">√</button>
+                <button onclick="toggleRadian()">RAD</button>
+                <button onclick="toggleDegree()">DEG</button>
+                <button onclick="appendExpression('Math.PI')">π</button>
+                <button onclick="appendExpression('Math.abs(')">Abs</button>
+                <button onclick="appendExpression('Math.sin(')">sin</button>
+                <button onclick="appendExpression('factorial(')">x!</button>
+                <button onclick="appendExpression('Math.E')">e</button>
+                <button onclick="appendExpression('Math.cos(')">cos</button>
+                <button onclick="appendExpression('Math.log(')">ln</button>
+                <button onclick="appendExpression('Math.log10(')">log</button>
+                <button onclick="appendExpression('Math.tan(')">tan</button>
+                <button onclick="appendExpression('Math.sqrt(')">√</button>
                 <button onclick="getPrevAnswer()">ANS</button>
-                <button onclick="appendExpression()">x<sup>2</sup></button>
-                <button onclick="appendExpression()">x<sup>y</sup></button>
+                <button onclick="appendExpression('**2')">x<sup>2</sup></button>
+                <button onclick="appendExpression('**')">x<sup>y</sup></button>
             </div>
             <div id="mid">
                 <!-- belum tahu tombol apa -->
                 <button>?</button>
                 <button>?</button>
                 <!-- ini fix -->
-                <button onclick="appendExpression()">(</button>
-                <button onclick="appendExpression()">)</button>
-                <button onclick="appendExpression()">7</button>
-                <button onclick="appendExpression()">8</button>
-                <button onclick="appendExpression()">9</button>
-                <button onclick="appendExpression()">/</button>
-                <button onclick="appendExpression()">4</button>
-                <button onclick="appendExpression()">5</button>
-                <button onclick="appendExpression()">6</button>
-                <button onclick="appendExpression()">*</button>
-                <button onclick="appendExpression()">1</button>
-                <button onclick="appendExpression()">2</button>
-                <button onclick="appendExpression()">3</button>
-                <button onclick="appendExpression()">-</button>
-                <button onclick="appendExpression()">0</button>
-                <button onclick="appendExpression()">.</button>
+                <button onclick="appendExpression('(')">(</button>
+                <button onclick="appendExpression(')')">)</button>
+                <button onclick="appendExpression('7')">7</button>
+                <button onclick="appendExpression('8')">8</button>
+                <button onclick="appendExpression('9')">9</button>
+                <button onclick="appendExpression('/')">/</button>
+                <button onclick="appendExpression('4')">4</button>
+                <button onclick="appendExpression('5')">5</button>
+                <button onclick="appendExpression('6')">6</button>
+                <button onclick="appendExpression('*')">*</button>
+                <button onclick="appendExpression('1')">1</button>
+                <button onclick="appendExpression('2')">2</button>
+                <button onclick="appendExpression('3')">3</button>
+                <button onclick="appendExpression('-')">-</button>
+                <button onclick="appendExpression('0')">0</button>
+                <button onclick="appendExpression('.')">.</button>
                 <button onclick="calculate()">=</button>
-                <button onclick="appendExpression()">+</button>
+                <button onclick="appendExpression('+')">+</button>
             </div>
             <div id="right">
                 <button onclick="backspaceExpression()">⌫</button>

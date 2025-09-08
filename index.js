@@ -1,14 +1,15 @@
-let display = document.getElementById("display");
+let display = document.getElementById('display');
+let displayBox = document.getElementById('display-box');
 
 let isRadian = false;
-let isDegree = false;
+let isDegree = true;
 
-function isRadian(){
+function toggleRadian(){
     isRadian = true;
     isDegree = false;
 }
 
-function isDegree(){
+function toggleDegree(){
     isRadian = false;
     isDegree = true;
 }
