@@ -11,55 +11,68 @@
 
 <body>
     <div class="container">
-        <div id="mode-indicator">DEG</div>
-        <div id="display-box">
-            <input type="text" id="display" placeholder="Input expression here">
+        <div class="left-container">
+            <div class="history-container">
+                <!-- placeholder text-->
+                History akan ditampilkan di sini.
+                Work in progress.
+            </div>
+            <div class="calc-container">
+                <div id="mode-indicator">DEG</div>
+                <div id="display-box">
+                    <input type="text" id="display" placeholder="Input expression here" onchange="">
+                </div>
+                <div class="buttons">
+                    <div id="left">
+                        <button id="radBtn">RAD</button>
+                        <button id="degBtn">DEG</button>
+                        <button id="piBtn" onclick="appendExpression('Math.PI')">π</button>
+                        <button id="absBtn" onclick="appendExpression('Math.abs(')">Abs</button>
+                        <button id="sinBtn" onclick="appendExpression('Math.sin(')">sin</button>
+                        <button id="factBtn" onclick="appendExpression('factorial(')">x!</button>
+                        <button id="eulerBtn" onclick="appendExpression('Math.E')">e</button>
+                        <button id="cosBtn" onclick="appendExpression('Math.cos(')">cos</button>
+                        <button id="lnBtn" onclick="appendExpression('Math.log(')">ln</button>
+                        <button id="logBtn" onclick="appendExpression('Math.log10(')">log</button>
+                        <button id="tanBtn" onclick="appendExpression('Math.tan(')">tan</button>
+                        <button id="sqrtBtn" onclick="appendExpression('Math.sqrt(')">√</button>
+                        <button id="ansBtn" onclick="getPrevAnswer()">ANS</button>
+                        <button id="squareBtn" onclick="appendExpression('**2')">x<sup>2</sup></button>
+                        <button id="powerBtn" onclick="appendExpression('**')">x<sup>y</sup></button>
+                    </div>
+                    <div id="mid">
+                        <button id="xBtn" onclick="appendExpression('x')">x</button>
+                        <button id="yBtn" onclick="appendExpression('y')">y</button>
+                        <button id="lParenthesesBtn" onclick="appendExpression('(')">(</button>
+                        <button id="rParenthesesBtn" onclick="appendExpression(')')">)</button>
+                        <button id="7Btn" onclick="appendExpression('7')">7</button>
+                        <button id="8Btn" onclick="appendExpression('8')">8</button>
+                        <button id="9Btn" onclick="appendExpression('9')">9</button>
+                        <button id="divideBtn" onclick="appendExpression('/')">&divide</button>
+                        <button id="4Btn" onclick="appendExpression('4')">4</button>
+                        <button id="5Btn" onclick="appendExpression('5')">5</button>
+                        <button id="6Btn" onclick="appendExpression('6')">6</button>
+                        <button id="multiplyBtn" onclick="appendExpression('*')">&times</button>
+                        <button id="1Btn" onclick="appendExpression('1')">1</button>
+                        <button id="2Btn" onclick="appendExpression('2')">2</button>
+                        <button id="3Btn" onclick="appendExpression('3')">3</button>
+                        <button id="subtractBtn" onclick="appendExpression('-')">-</button>
+                        <button id="0Btn" onclick="appendExpression('0')">0</button>
+                        <button id="decSeparatorBtn" onclick="appendExpression('.')">.</button>
+                        <button id="calcBtn" onclick="calculate()">=</button>
+                        <button id="additionBtn" onclick="appendExpression('+')">+</button>
+                    </div>
+                    <div id="right">
+                        <button id="backspaceBtn" onclick="backspaceExpression()">⌫</button>
+                        <button id="acBtn" onclick="clearExpression()">AC</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="buttons">
-            <div id="left">
-                <button id="radBtn">RAD</button>
-                <button id="degBtn">DEG</button>
-                <button id="piBtn" onclick="appendExpression('Math.PI')">π</button>
-                <button id="absBtn" onclick="appendExpression('Math.abs(')">Abs</button>
-                <button id="sinBtn" onclick="appendExpression('Math.sin(')">sin</button>
-                <button id="factBtn" onclick="appendExpression('factorial(')">x!</button>
-                <button id="eulerBtn" onclick="appendExpression('Math.E')">e</button>
-                <button id="cosBtn" onclick="appendExpression('Math.cos(')">cos</button>
-                <button id="lnBtn" onclick="appendExpression('Math.log(')">ln</button>
-                <button id="logBtn" onclick="appendExpression('Math.log10(')">log</button>
-                <button id="tanBtn" onclick="appendExpression('Math.tan(')">tan</button>
-                <button id="sqrtBtn" onclick="appendExpression('Math.sqrt(')">√</button>
-                <button id="ansBtn" onclick="getPrevAnswer()">ANS</button>
-                <button id="squareBtn" onclick="appendExpression('**2')">x<sup>2</sup></button>
-                <button id="powerBtn" onclick="appendExpression('**')">x<sup>y</sup></button>
-            </div>
-            <div id="mid">
-                <!-- belum tahu tombol apa -->
-                <button id="xBtn" onclick="appendExpression('x')">x</button>
-                <button id="yBtn" onclick="appendExpression('y')">y</button>
-                <!-- ini fix -->
-                <button id="lParenthesesBtn" onclick="appendExpression('(')">(</button>
-                <button id="rParenthesesBtn" onclick="appendExpression(')')">)</button>
-                <button id="7Btn" onclick="appendExpression('7')">7</button>
-                <button id="8Btn" onclick="appendExpression('8')">8</button>
-                <button id="9Btn" onclick="appendExpression('9')">9</button>
-                <button id="divideBtn" onclick="appendExpression('/')">/</button>
-                <button id="4Btn" onclick="appendExpression('4')">4</button>
-                <button id="5Btn" onclick="appendExpression('5')">5</button>
-                <button id="6Btn" onclick="appendExpression('6')">6</button>
-                <button id="multiplyBtn" onclick="appendExpression('*')">*</button>
-                <button id="1Btn" onclick="appendExpression('1')">1</button>
-                <button id="2Btn" appendExpression('2')">2</button>
-                <button id="3Btn" onclick="appendExpression('3')">3</button>
-                <button id="subtractBtn" onclick="appendExpression('-')">-</button>
-                <button id="0Btn" onclick="appendExpression('0')">0</button>
-                <button id="decSeparatorBtn" appendExpression('.')">.</button>
-                <button id="calcBtn" onclick="calculate()">=</button>
-                <button id="additionBtn" onclick="appendExpression('+')">+</button>
-            </div>
-            <div id="right">
-                <button id="backspaceBtn" onclick="backspaceExpression()">⌫</button>
-                <button id="acBtn" onclick="clearExpression()">AC</button>
+        <div class="right-container">
+            <div class="plot-container">
+                <!-- placeholder text -->
+                Plotting grafik akan ditampilkan di sini.
             </div>
         </div>
     </div>
