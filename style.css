@@ -158,3 +158,12 @@ button {
     background: rgb(240, 63, 63);
     color: white;
 }
+
+.history-container span{
+    padding-left: 8px;
+}
+
+#history-list .history-list-item{
+    cursor: pointer;
+    margin: 8px;
+}

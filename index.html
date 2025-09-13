@@ -7,15 +7,19 @@
     <title>Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
+    <script src="scripts/history.js"></script>
+    <script src="scripts/plot.js"></script>
+    <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="left-container">
             <div class="history-container">
-                <!-- placeholder text-->
-                History akan ditampilkan di sini.
-                Work in progress.
+                <span>Calculation History</span>
+                <ul id="history-list" style="list-style-type: none;">
+
+                </ul>
             </div>
             <div class="calc-container">
                 <div id="mode-indicator">DEG</div>
