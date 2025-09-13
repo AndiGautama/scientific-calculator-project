@@ -14,16 +14,58 @@ body {
     padding: 20px;
 }
 
-.container {
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .calc-container,
+    .history-container,
+    .plot-container {
+        width: 100%;
+    }
+
+    .left-container {
+        order: 1;
+    }
+
+    .right-container {
+        order: 2;
+    }
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    gap: 2em;
+}
+
+.left-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.calc-container, .history-container, .plot-container {
     background: #fff;
     padding: 22px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 433px;
+    width: 488px;
+}
+
+.history-container{
+    min-height: 248px;
 }
 
 #display-box {
     margin-bottom: 15px;
+}
+
+.plot-container{
+    min-height: 662px;
 }
 
 #display {
