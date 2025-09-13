@@ -27,6 +27,8 @@ function getPrevAnswer(){
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    loadHistory();
+    plot('');
     modeIndicator = document.getElementById('mode-indicator');
 
     const input = getInputDisplay();
@@ -38,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             calculate();
         }
     })
-
-    const radBtn = document.getElementById('radBtn');
-    const degBtn = document.getElementById('degBtn');
-
-    if (radBtn) radBtn.addEventListener('click', () => toggleMode('radBtn'));
-    if (degBtn) degBtn.addEventListener('click', () => toggleMode('degBtn'));
 });
 
 function toggleMode(elementId) {
@@ -68,6 +64,15 @@ function appendExpression(value){
 }
 
 function clearExpression(){
+    if (getInputDisplay().value === ''){
+        expression = '';
+        history.length = 0;
+        localStorage.removeItem('historyData');
+        const toDeleted = document.querySelectorAll('div.history-list-item');
+        toDeleted.forEach(elem =>{
+            elem.remove();
+        });
+    }
     expression = '';
     getInputDisplay().value = '';
 }
@@ -79,19 +84,26 @@ function backspaceExpression(){
 
 function calculate(){
     let expr = expression;
-     if (isDegree) {
+
+    if (isDegree) {
         expr = expr.replace(/Math\.sin\(([^)]+)\)/g, "Math.sin(toRadians($1))");
         expr = expr.replace(/Math\.cos\(([^)]+)\)/g, "Math.cos(toRadians($1))");
         expr = expr.replace(/Math\.tan\(([^)]+)\)/g, "Math.tan(toRadians($1))");
     }
-    // untuk mencegah floating point error
-    const answer = parseFloat(eval(expr)).toFixed(12) * 1;
-    const exprAndAns = expr+'='+answer;
-    appendHistory(exprAndAns);
-    
-    setPrevAnswer(answer);
-    expression = answer;
-    getInputDisplay().value = answer;
+
+    if (expr.includes('x')){
+        plot(expr.replace(/\*\*/g, "^"));
+        appendHistory(expr);
+    } else{
+        // untuk mencegah floating point error
+        const answer = parseFloat(eval(expr)).toFixed(12) * 1;
+        const exprAndAns = expr+'='+answer;
+        appendHistory(exprAndAns);
+        
+        setPrevAnswer(answer);
+        expression = answer;
+        getInputDisplay().value = answer;
+    }
 }
 
 function factorial(value){
