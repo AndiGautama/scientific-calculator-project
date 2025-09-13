@@ -48,7 +48,7 @@ body {
     gap: 2em;
 }
 
-.calc-container, .history-container, .plot-container {
+.calc-container, .history-container, .right-container {
     background: #fff;
     padding: 22px;
     border-radius: 12px;
@@ -64,7 +64,7 @@ body {
     margin-bottom: 15px;
 }
 
-.plot-container{
+.right-container{
     min-height: 662px;
 }
 

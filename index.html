@@ -28,8 +28,8 @@
                 </div>
                 <div class="buttons">
                     <div id="left">
-                        <button id="radBtn">RAD</button>
-                        <button id="degBtn">DEG</button>
+                        <button id="radBtn" onclick="toggleMode('radBtn')">RAD</button>
+                        <button id="degBtn" onclick="toggleMode('degBtn')">DEG</button>
                         <button id="piBtn" onclick="appendExpression('Math.PI')">π</button>
                         <button id="absBtn" onclick="appendExpression('Math.abs(')">Abs</button>
                         <button id="sinBtn" onclick="appendExpression('Math.sin(')">sin</button>
@@ -46,7 +46,7 @@
                     </div>
                     <div id="mid">
                         <button id="xBtn" onclick="appendExpression('x')">x</button>
-                        <button id="yBtn" onclick="appendExpression('y')">y</button>
+                        <button id="yBtn" onclick="appendExpression('/100')">%</button>
                         <button id="lParenthesesBtn" onclick="appendExpression('(')">(</button>
                         <button id="rParenthesesBtn" onclick="appendExpression(')')">)</button>
                         <button id="7Btn" onclick="appendExpression('7')">7</button>
@@ -74,9 +74,7 @@
             </div>
         </div>
         <div class="right-container">
-            <div class="plot-container">
-                <!-- placeholder text -->
-                Plotting grafik akan ditampilkan di sini.
+            <div id="plot-container">
             </div>
         </div>
     </div>
