@@ -29,7 +29,7 @@ function getPrevAnswer(){
 document.addEventListener('DOMContentLoaded', function() {
     modeIndicator = document.getElementById('mode-indicator');
 
-    const input = document.getElementById('display');
+    const input = getInputDisplay();
     input.addEventListener('input', function(e){
         expression = input.value;
     })
@@ -86,7 +86,8 @@ function calculate(){
     }
     // untuk mencegah floating point error
     const answer = parseFloat(eval(expr)).toFixed(12) * 1;
-    // const exprAndAns = expr+'='+answer;
+    const exprAndAns = expr+'='+answer;
+    appendHistory(exprAndAns);
     
     setPrevAnswer(answer);
     expression = answer;
