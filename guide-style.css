@@ -1,3 +1,19 @@
+@media only screen and (max-width: 600px) {
+    .container{
+        font-size: 12px;
+        text-align: justify;
+    }
+
+    .misc-text span h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.container{
+    text-align: justify;
+    min-width: 462px;
+}
+
 #guide-link{
     color:black;
     text-decoration: none;
@@ -35,12 +51,19 @@
     border-collapse: collapse;
 }
 
+table{
+    max-width: 70%;
+    margin-left: 15%;
+    font-size: clamp(8px, 18px, 20px);
+}
+
 th, td{
     padding: 0.22em;
 }
 
 th{
     background-color: beige;
+    text-align: center;
 }
 
 ol li{
