@@ -9,9 +9,13 @@
     <title>Guide</title>
 </head>
 
-<body>
+<body>  
     <div class="container">
         <div class="information">
+            <div class="button_home_page">
+                 <a href="index.html" class="home-btn">Go back to Homepage</a>
+            </div>
+            
             <div class="shortcuts-info">
                 <h2>Keyboard Shortcuts</h2>
             </div>
@@ -92,55 +96,53 @@
             <div class="history-help-header">
                 <h2>Accessing Calculation History</h2>
             </div>
-            <div class="history-help">
-                <ol>
-                    <li>
-                        <div class="ol-text">
-                            Hover your mouse to previous calculation, right above calculator. Then, left click the
-                            expression.
-                        </div>
-                        <div class="help-img">
-                            <img src="assets\mouse-hover.png" alt="mouse hover example">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ol-text">
-                            The clicked expression will be pasted to your input box.
-                        </div>
-                        <div class="help-img">
-                            <img src="assets\pasted-history.png" alt="pasted history example">
-                        </div>
-                    </li>
-                </ol>
+            <div class="history-help card">   <!-- tambahkan class card -->
+    <ol>
+        <li>
+            <div class="ol-text">
+                Hover your mouse to previous calculation, right above calculator. Then, left click the expression.
             </div>
-            <div class="plot-help-header">
-                <h2>Plotting a Function</h2>
+            <div class="help-img">
+                <img src="assets/mouse-hover.png" alt="mouse hover example">
             </div>
-            <div class="plot-help">
-                <div class="plot-note">
-                    <p>Note : This calculator only supports single variable function plotting.</p>
-                </div>
-                <ol>
-                    <li>
-                        <div class="ol-text">
-                            Type your function definition at the calculator's input box, using x as the variable.
-                        </div>
-                        <div class="help-img">
-                            <img src="assets\plot-input.png" alt="plot input">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="ol-text">
-                            Press enter or equals button to plot the function's graph.
-                        </div>
-                        <div class="help-img">
-                            <img src="assets\plot-output.png" alt="plot output">
-                        </div>
-                    </li>
-                </ol>
+        </li>
+        <li>
+            <div class="ol-text">
+                The clicked expression will be pasted to your input box.
             </div>
-        </div>
+            <div class="help-img">
+                <img src="assets/pasted-history.png" alt="pasted history example">
+            </div>
+        </li>
+    </ol>
+</div>
+
+<div class="plot-help-header">
+    <h2>Plotting a Function</h2>
+</div>
+<div class="plot-help card">   <!-- tambahkan class card -->
+    <div class="plot-note">
+        <p>Note : This calculator only supports single variable function plotting.</p>
     </div>
+    <ol>
+        <li>
+            <div class="ol-text">
+                Type your function definition at the calculator's input box, using x as the variable.
+            </div>
+            <div class="help-img">
+                <img src="assets/plot-input.png" alt="plot input">
+            </div>
+        </li>
+        <li>
+            <div class="ol-text">
+                Press enter or equals button to plot the function's graph.
+            </div>
+            <div class="help-img">
+                <img src="assets/plot-output.png" alt="plot output">
+            </div>
+        </li>
+    </ol>
+</div>
 
 </body>
 
