@@ -1,4 +1,5 @@
 @media only screen and (max-width: 600px) {
+    
     .container{
         font-size: 12px;
         text-align: justify;
@@ -9,9 +10,71 @@
     }
 }
 
+.button_home_page {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.button_home_page .home-btn {
+    display: block;          
+    width: 100%;            
+    text-align: center;     
+    padding: 14px 0;
+    background: lightgray;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
 .container{
     text-align: justify;
     min-width: 462px;
+}
+
+/* --- Card untuk tabel --- */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+table {
+    max-width: 70%;
+    margin: 0 auto;     
+    font-size: clamp(8px, 18px, 20px);
+    text-align: center;
+}
+
+th, td {
+    padding: 0.22em;
+    text-align: center;
+}
+
+
+.help-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.help-img img {
+    margin: 12px auto;
+    max-width: 80%;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease;
+    display: block;
 }
 
 #guide-link{
@@ -52,8 +115,8 @@
 }
 
 table{
-    max-width: 70%;
-    margin-left: 15%;
+    max-width: 80%;
+    margin-left: 24%;
     font-size: clamp(8px, 18px, 20px);
 }
 
@@ -75,38 +138,80 @@ ol li{
     max-width: 80%;
 }
 
-.plot-help, .history-help{
+.plot-help, .history-help {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.5em;
+    padding: 24px;
+    background: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.ol-text,
-.help-img,
-.plot-note {
-    display: flex;
-    flex-direction: column;
+.plot-help h3,
+.history-help h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+}
+
+.ol-text {
     margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
 }
 
-.help-img{
+.ol-text ol li {
+    margin-left: 20px;
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #333;
+}
+
+.help-img {
     align-items: center;
+    margin-top: 16px;
 }
 
-.help-img img{
+.help-img img {
+    margin: 12px 0;
+    max-width: 90%;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transition: transform 0.25s ease;
+}
+
+.help-img img:hover {
+    transform: scale(1.03);
+}
+
+.plot-note {
+    background: #eef2ff;
+    border-left: 5px solid lightgray;
+    padding: 12px 16px;
+    border-radius: 10px;
     margin-top: 12px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 12px rgba(48, 48, 48, 0.2);
-    border-radius: 12px;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-.shortcuts{
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-}
+@media only screen and (max-width: 600px) {
+    .plot-help, .history-help {
+        padding: 16px;
+    }
 
-.table-container{
-    display: flex;
-    flex-direction: column;
+    .plot-help h3,
+    .history-help h3 {
+        font-size: 1.3rem;
+    }
+
+    .ol-text ol li {
+        font-size: 0.9rem;
+    }
 }
