@@ -26,19 +26,58 @@ function getPrevAnswer(){
     }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    loadHistory();
-    plot('');
-    modeIndicator = document.getElementById('mode-indicator');
-
-    const input = getInputDisplay();
-    input.addEventListener('input', function(e){
-        expression = input.value;
-    })
-    input.addEventListener('keypress', function(e){
+function loadKeyboardEvent(){
+    getInputDisplay().addEventListener('keydown', function(e){
+        expression = getInputDisplay().value;
         if(e.key === 'Enter'){
             calculate();
         }
+        if(e.ctrlKey){
+            switch (e.key){
+                case 'Backspace':
+                    clearExpression();
+                default:
+
+            }
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadKeyboardEvent();
+    loadHistory();
+    plot('0');
+    modeIndicator = document.getElementById('mode-indicator');
+
+    getInputDisplay().addEventListener('input', function(e){
+        expression = getInputDisplay().value;
+        let temp = getInputDisplay().value;
+        console.log(temp);
+        
+        const maps = {
+            'fact': 'factorial(',
+            'abs': 'Math.abs(',
+            'sin': 'Math.sin(',
+            'cos': 'Math.cos(',
+            'tan': 'Math.tan(',
+            'log': 'Math.log10(',
+            'ln': 'Math.log(',
+            'sq': 'Math.sqrt(',
+            'pi': 'Math.PI',
+            '%': '/100',
+            'e': 'Math.E',
+            '\\^': '**',
+        };  
+
+        for (const key in maps){
+            const regex = new RegExp(`(?<!Math\\.)\\b${key}\\b`, 'gi');
+            console.log(regex);
+            temp = temp.replace(regex, maps[key]);
+            console.log(temp);
+        }
+
+        getInputDisplay().value = temp;
+        expression = temp;
     })
 });
 
@@ -83,26 +122,44 @@ function backspaceExpression(){
 }
 
 function calculate(){
+    expression = getInputDisplay().value;
     let expr = expression;
 
-    if (isDegree) {
+    if (isDegree && !expr.includes('x')) {
         expr = expr.replace(/Math\.sin\(([^)]+)\)/g, "Math.sin(toRadians($1))");
         expr = expr.replace(/Math\.cos\(([^)]+)\)/g, "Math.cos(toRadians($1))");
         expr = expr.replace(/Math\.tan\(([^)]+)\)/g, "Math.tan(toRadians($1))");
     }
 
     if (expr.includes('x')){
-        plot(expr.replace(/\*\*/g, "^"));
+        let temp = expr.replace(/\*\*/g, '^');
+        temp = temp.replace(/Math\./g, '');
+        try{
+            plot(temp);
+            console.log(temp);
+        }catch{
+            alert('Invalid function expression!');
+            return;
+        }
         appendHistory(expr);
     } else{
-        // untuk mencegah floating point error
-        const answer = parseFloat(eval(expr)).toFixed(12) * 1;
-        const exprAndAns = expr+'='+answer;
-        appendHistory(exprAndAns);
-        
-        setPrevAnswer(answer);
-        expression = answer;
-        getInputDisplay().value = answer;
+        try{
+            // untuk mencegah floating point error
+            const answer = parseFloat(eval(expr)).toFixed(12) * 1;
+            if (Number.isNaN(answer)){
+                alert('Invalid expression!');
+                return;
+            }
+            const exprAndAns = expr+'='+answer;
+            appendHistory(exprAndAns);
+            
+            setPrevAnswer(answer);
+            expression = answer.toString();
+            getInputDisplay().value = answer;
+        }catch{
+            alert('Invalid expression!');
+            return;
+        }
     }
 }
 

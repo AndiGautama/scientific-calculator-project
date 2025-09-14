@@ -1,0 +1,89 @@
+#guide-link{
+    color:black;
+    text-decoration: none;
+}
+
+.misc{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.misc-text span h3{
+    font-size: 1.8rem;
+}
+
+.information {
+    display: flex;
+    min-width: 408px;
+    min-height: 600px;
+    width: auto;
+    height: auto;
+    max-width: 80vw;
+    background-color: #fff;
+    padding: 28px;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 18px;
+}
+
+.shortcuts table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 0.22em;
+}
+
+th{
+    background-color: beige;
+}
+
+ol li{
+    margin-left: 20px;
+    margin-right: 24px
+}
+
+.information img{
+    max-width: 80%;
+}
+
+.plot-help, .history-help{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.ol-text,
+.help-img,
+.plot-note {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.help-img{
+    align-items: center;
+}
+
+.help-img img{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(48, 48, 48, 0.2);
+    border-radius: 12px;
+}
+
+.shortcuts{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.table-container{
+    display: flex;
+    flex-direction: column;
+}
