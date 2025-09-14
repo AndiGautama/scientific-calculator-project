@@ -4,6 +4,20 @@
     box-sizing: border-box;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
+
+.judul_page {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px; 
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #f0f0f0;
@@ -56,8 +70,48 @@ body {
     width: 488px;
 }
 
-.history-container{
+.history-container {
     min-height: 248px;
+    position: relative;
+}
+
+.history-container span {
+    padding-left: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+#history-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+#history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#history-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+#history-list .history-list-item {
+    cursor: pointer;
+    margin: 6px 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', monospace;
+    color: #333;
+    background: #f8f9fa;
 }
 
 #display-box {
@@ -76,6 +130,7 @@ body {
     border-radius: 8px;
     border: 1px solid #ccc;
     text-align: right;
+    font-family: 'Segoe UI';
 }
 
 .buttons {
@@ -105,7 +160,7 @@ body {
     gap: 6px;
 }
 
-/* Base button */
+
 button {
     padding: 12px;
     font-size: 16px;
@@ -115,7 +170,7 @@ button {
     cursor: pointer;
 }
 
-/* Default button (scientific & misc) */
+
 #left button,
 #mid button,
 #right button {
