@@ -11,7 +11,7 @@ function plot(y){
         target: "#plot-container",
         width,
         height,
-        yAxis: { domain: [-1, 10], label: 'y'},
+        yAxis: { domain: [-5, 5], label: 'y'},
         xAxis: { domain: [-5, 5], label: 'x'},
         grid: true,
         data: [
