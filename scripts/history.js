@@ -2,7 +2,7 @@ const history = [];
 
 function appendHistory(expression){
     history.push(expression);
-    if (history.length > 7) history.shift();
+    if (history.length > 5) history.shift();
 
     updateHistory();
 }
