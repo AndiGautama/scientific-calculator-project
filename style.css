@@ -4,11 +4,28 @@
     box-sizing: border-box;
 }
 
+.header{
+    width: 100vw;
+    background-color: white;
+    height: auto;
+    margin: 0px;
+    position: fixed;    
+    top: 0; 
+    z-index:     20;
+    padding-top: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1{
+    font-size: 24px;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center; 
     width: 100%;
+    margin-top: 52px;
 }
 
 .judul_page {
@@ -71,7 +88,8 @@ body {
 }
 
 .history-container {
-    min-height: 248px;
+    max-height: 208px;
+    min-height: 208px;
     position: relative;
 }
 
@@ -85,7 +103,8 @@ body {
 }
 
 #history-list {
-    max-height: 200px;
+    height: calc(3 * 48);
+    max-height: 132px;
     overflow-y: auto;
     padding-right: 4px;
 }
@@ -112,6 +131,7 @@ body {
     font-family: 'Segoe UI', monospace;
     color: #333;
     background: #f8f9fa;
+    min-height: 30px;
 }
 
 #display-box {
@@ -119,7 +139,7 @@ body {
 }
 
 .right-container{
-    min-height: 662px;
+    max-height: 620px;
 }
 
 #display {
@@ -221,4 +241,16 @@ button {
 #history-list .history-list-item{
     cursor: pointer;
     margin: 8px;
+}
+
+.misc {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.misc-text span h3 {
+    font-size: 1.8rem;
 }
